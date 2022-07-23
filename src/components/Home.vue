@@ -1,25 +1,27 @@
 <template>
-    <div class="home">
-        <div class="hero">
-
-            <h2>Welcome to The CodeAddict</h2>
-            <img src="" alt="">
-        </div>
-    </div>
+  <div class="home">
+    <HeroComponent/>
+    <PortFolio/>
+  </div>
 </template>
 
 <script>
-    export default {
-        name:"HomeComponent"
-    }
+import HeroComponent from './Hero.vue';
+import PortFolio from './Portfolio.vue';
+
+export default {
+    name: "HomeComponent",
+    setup() {
+        return {};
+    },
+    components: { HeroComponent, PortFolio }
+};
 </script>
 
 <style lang="scss" scoped>
-.hero{
-    padding: 25px;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-}
+.home {
+  padding: 35px;
+  margin: 0 auto;
 
+}
 </style>

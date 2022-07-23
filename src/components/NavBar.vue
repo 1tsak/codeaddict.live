@@ -5,8 +5,7 @@
       <div v-if="!mobile" class="nav">
         <ul>
           <router-link class="links" to="abc">Home</router-link>
-          <router-link class="links" to="#">Services</router-link>
-          <router-link class="links" to="#">Blogs</router-link>
+          <router-link class="links" to="#">Portfolio</router-link>
           <router-link class="links" to="#">About</router-link>
           <router-link class="links" to="#">Contact</router-link>
         </ul>
@@ -18,12 +17,14 @@
         :src="menuIc"
         alt=""
       />
+      <div class="toggle-mode">
+        <i class="fas fa-moon"></i>
+      </div>
     </header>
     <transition name="nav-mobile">
       <ul v-show="mobileNav" class="nav-mobile">
         <router-link class="links" to="abc">Home</router-link>
         <router-link class="links" to="#">Services</router-link>
-        <router-link class="links" to="#">Blogs</router-link>
         <router-link class="links" to="#">About</router-link>
         <router-link class="links" to="#">Contact</router-link>
       </ul>
@@ -76,8 +77,9 @@ header {
   display: flex;
   color: #36454f;
   justify-content: space-between;
-  box-shadow: 0 0 5px 0 rgba($color: #000000, $alpha: 0.3);
+  // box-shadow: 0 0 5px 0 rgba($color: #000000, $alpha: 0.3);
   align-items: center;
+  margin: 0 auto;
 
   .branding {
     margin: 20px 25px;
@@ -93,12 +95,14 @@ header {
     margin-right: 25px;
   }
   .links {
-    padding: 0px 10px;
-    font-weight: 500;
-    font-size: 15px;
-    text-transform: uppercase;
-    font-family: "Ubuntu", sans-serif;
+    margin: 0px 15px;
+    font-weight: 250;
+    font-size: 1.0rem;
+    // text-transform: uppercase;
     cursor: pointer;
+    &:hover {
+      border-bottom: 1px solid rgb(80, 87, 126);
+    }
   }
 }
 .menu-ic {
@@ -127,9 +131,8 @@ header {
     text-transform: uppercase;
     cursor: pointer;
   }
-  .links:first-child{
-      
-  margin-top:25px;
+  .links:first-child {
+    margin-top: 25px;
   }
 }
 .nav-mobile-enter-active,
@@ -144,5 +147,9 @@ header {
 }
 .nav-mobile-leave-to {
   transform: translateX(-250px);
+}
+.toggle-mode {
+  padding-right: 35px;
+  padding-left: 25px;
 }
 </style>
